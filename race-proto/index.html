@@ -53,11 +53,32 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.canvasWrapper {
+	border: 1px solid #ababab;
+	background-color: #2ccae2;
+	border-bottom: 10px solid #2ccae2;
+	padding: 10px 10px 0px 10px;
+	margin: 0 auto;
+	text-align: center;
+} 
+.instructios {
+	font: 14px;
+	font-family: Verdana, arial;
+	font-weight: bold;
+	margin: 10px 10px 15px;
+	text-align: center;
+}
 			
 		</style>
 	</head>
 	<body>
-		<canvas id="canvas" width="300" height="550" tabindex="1"></canvas>
+		<div class="instructios">
+			- Use Left and Right arrow key to escape from the obstacles coming your way. 
+		</div>
+		<div class="canvasWrapper">
+			<canvas id="canvas" width="400" height="550" tabindex="1" style="margin: 0 auto"></canvas>
+		</div>
+		
 	</body>
 	<script type="text/javascript" src="race-temp.js"></script>
 </html>

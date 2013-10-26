@@ -220,23 +220,3 @@ function createParticles(x, y, m) {
 	this.vx = -1.5 + Math.random()*3;
 	this.vy = m * Math.random()*1.5;
 }
-
-function emitParticles() { 
-	for(var j = 0; j < particles.length; j++) {
-		par = particles[j];
-		
-		ctx.beginPath(); 
-		ctx.fillStyle = "white";
-		if (par.radius > 0) {
-			ctx.arc(par.x, par.y, par.radius, 0, Math.PI*2, false);
-		}
-		ctx.fill();	 
-		
-		par.x += par.vx; 
-		par.y += par.vy; 
-		
-		// Reduce radius so that the particles die after a few seconds
-		par.radius = Math.max(par.radius - 0.006, 0.0); 
-		
-	} 
-}

@@ -24,6 +24,7 @@ var canvas, ctx, W, H,
 	obstacles = [];
 	baseX = 0;
 	baseY = 0;
+	canvasBG = "#322f2a";
 
 
 function init() {
@@ -33,10 +34,11 @@ function init() {
 	W = canvas.width;
 	H = canvas.height;
 
-	ctx.fillStyle = "black";
+	ctx.fillStyle = canvasBG;
 	ctx.fillRect(0, 0, W, H);
 
 	setDefault();
+	canvas.click();
 }
 
 init();
@@ -44,11 +46,11 @@ init();
 function Car() {
 	this.width = 30;
 	this.height = 50;
-	this.x = baseX = this.width/2;
+	this.x = baseX = W/2 - this.width/2;
 	this.y = baseY = H-(this.height/2);
 
 	this.draw = function() {
-		ctx.fillStyle = "white";
+		ctx.fillStyle = "#2ccae2";
 		ctx.fillRect(this.x-(this.width/2), this.y-(this.height/2), this.width, this.height);
 	};
 }
@@ -58,7 +60,7 @@ function setDefault() {
 
 	car[0].draw();
 
-	canvas.addEventListener('keydown', updateCarPos, false);
+	window.addEventListener('keydown', updateCarPos, false);
 
 	obstacles = [];
 
@@ -90,7 +92,7 @@ function shiftCar(dir) {
 }
 
 function update() {
-	ctx.fillStyle = 'black';
+	ctx.fillStyle = canvasBG;
 	ctx.fillRect(0, 0, W, H);
 	car[0].draw();
 
@@ -116,7 +118,7 @@ function Obstacle () {
 	this.y = this.height/2;
 
 	this.draw = function ()	{
-		ctx.fillStyle = 'white';
+		ctx.fillStyle = '#e2121c';
 		ctx.fillRect(this.x-(this.width/2), this.y-(this.height/2), this.width, this.height);
 	};
 }
