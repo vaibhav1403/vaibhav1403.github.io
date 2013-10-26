@@ -131,7 +131,7 @@ function createObstacle () {
 function updateObstacle() {
 	var obstacleNumber = obstacles.length;
 	for(var j=0; j<obstacleNumber; j++) {
-		obstacles[j].y += 5;
+		obstacles[j].y += 3;
 		obstacles[j].draw();
 	}
 }
